@@ -1,22 +1,12 @@
 import React, {useEffect} from 'react';
-import {Alert, Linking, Text, TouchableOpacity, View} from 'react-native';
+import {Linking, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 function HomeScreen() {
-  const onPress = async () => {
-    try {
-      await Linking.openURL('http://mytubesite.com/home/2');
-    } catch (e) {
-      console.log('E', e);
-    }
-  };
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
-      <TouchableOpacity onPress={onPress}>
-        <Text>CLICK ME!</Text>
-      </TouchableOpacity>
     </View>
   );
 }
